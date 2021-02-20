@@ -1,0 +1,42 @@
+
+const fs = require('fs');
+const axios = require('axios').default;
+
+const file_path = '/Users/mushu/Downloads/just-playing.mp3'
+
+const config = {
+    method: 'post',
+    url: 'https://api.dolby.com/media/input',
+    headers: {
+        'x-api-key': 'aLoqEU72Rz9Th9tORbixy0iQRxIVJpAG',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+    data: {
+        url: 'dlb://just-playing.mp3'
+    }
+};
+
+axios(config)
+    .then(function (response) {
+        const upload_config = {
+            method: 'put',
+            url: response.data.url,
+            data: fs.createReadStream(file_path),
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                'Content-Length': fs.statSync(file_path).size
+            }
+        };
+        axios(upload_config)
+            .then(function () {
+                console.log("File uploaded")
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
