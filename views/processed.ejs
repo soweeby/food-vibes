@@ -9,8 +9,25 @@
     <script>
         const key = "b9144087445642548997f02c574886f9";
         var rit_store_number = 62;
+        var hip_hop = ["Sweet Baby Ray's Original", "Sprite", "Takis", "Mac&amp:Cheese"]
 
-        async function findlocation(sku, store) {
+        async function findFoods(foods) { //gets SKUs from list of foods
+            var stuffs = [];
+            for (let food of foods) {
+                let skuu = await axios.get(`https://api.wegmans.io/products/search?query=${food}&api-version=2018-10-18&Subscription-Key=${key}`)
+                console.log(skuu.data.results[0]);
+                let stuff = parseInt(skuu.data.results[0].sku);
+                stuffs.push(stuff);
+                console.log(stuff);
+            }
+            console.log(stuffs);
+            for (let thing of stuffs) { //gets aisle location for each item
+                console.log(thing)
+                let location = await findlocation(thing, 62);
+                console.log(location);
+            }
+        }
+        async function findlocation(sku, store) { //gets aisle locations
 
             let location = await makeGetRequest(`https://api.wegmans.io/products/${sku}/locations/${store}?api-version=2018-10-18&subscription-key=${key}`)
             var stringystring = location;
@@ -24,8 +41,7 @@
             let data = res.data.locations[0];
             return data;
         }
-
-        findlocation(756505, 1);
+        findFoods(hip_hop);
 
     </script>
         <div class="center-div">
