@@ -9,7 +9,7 @@ Because of COVID-19, hanging out with friends becomes increasingly difficult esp
 More descriptive:
 > *food vibes* takes an audio file and enhances it using the Media Processing API by [https://dolby.io/](dolby.io). 
 This is was used for recordings where there might be background noise. 
-> Then, the audio file will be put through the Media Recognition API by [https://www.acrcloud.com/] (ACRCloud) to recognize the song.
+> Then, the audio file will be put through the Media Recognition API by [https://www.acrcloud.com/](ACRCloud) to recognize the song.
 > Using this, the webpage will come up with a couple of different products found at Wegmans using the Products API by [https://dev.wegmans.io/](Wegmans) that would fit the 'vibe'/mood of the song.
 The foods and genres are related using our personal opinions/experiences.
 
