@@ -96,12 +96,14 @@ function identify_v2(data, options, cb) {
 
 
 module.exports={
+  song_data: null,
   identify_song: function(file_name){
     var bitmap = fs.readFileSync(file_name);
     identify(Buffer.from(bitmap), defaultOptions, function (err, httpResponse, body) {
       if (err) console.log(err);
       let json = JSON.parse(body);
       console.log(JSON.stringify(json['metadata']['music'][0]['genres'][0]['name']));
+      module.exports.song_data = json['metadata']['music'][0];
     });
   }
 }
