@@ -18,19 +18,21 @@
         var rit_store_number = 62;
         var stuffs = null;
         var stuffz = [];
-        if ("<%= songgenre%>" === "Hip Hop" || "<% songgenre%>" === "Rap") {
+        let song_genre = "<%= songgenre%>".toLowerCase();
+        let song_artist = "<%= songartist%>".toLowerCase();
+        if (song_genre === "hip hop" || song_genre === "rap") {
             stuffs = ["Sweet Baby Ray's Original", "Sprite 16.9oz", "Takis 9.9 oz", "Mac&ampCheese"];
         }
-        else if ("<%= songgenre%>".includes("Rock") || "<%= songgenre%>".includes("Metal")) {
+        else if (song_genre.includes("rock") || song_genre.includes("metal")) {
             stuffs = ["Twisted Tea 12pk", "Cheetos", "Twizzlers", "Lays Original"];
         }
-        else if ("<%= songgenre%>" === "Dance" || "<%= songgenre%>" === "Pop") {
+        else if (song_genre === "dance" || song_genre === "pop") {
 
         }
-        else if ("<%= songartist%>" === "100 Gecs") {
+        else if (song_artist === "100 gecs") {
             stuffs = ["windex"];
         }
-        else if ("<%= songgenre%>".includes("Electro")) {
+        else if (song_genre.includes("electro")) {
             stuffs = ["Monster Energy Drink", "Bang Energy", "Red Bull", "Rockstar Energy"]
         }
         async function findFoods(foods) { //gets SKUs from list of foods
@@ -81,7 +83,6 @@
             <h2 id="food2"></h2>
             <h2 id="food3"></h2>
             <h2 id="food4"></h2>
-            <h1>press for your recommendations</h1>
         </div>
     </body>
 </html>

@@ -47,9 +47,9 @@ app.post('/upload-clip', async (req, res) => {
 					genrerec.identify_song('./uploads/'+split[0]+'-enhanced.'+split[1]);
 				//send response
           let bintId = setInterval(()=>{
-            console.log("grecRes:"+genrerec.song_data);
             if(genrerec.song_data != null && genrerec.song_data != false){
-              res.render('processed', {songname: 'f', songartist:'f', songgenre:JSON.stringify(genrerec.song_data['genres'][0]['name']).replace(new RegExp('"', 'g'),'')});
+              console.log("grecRes:"+JSON.stringify(genrerec.song_data));
+              res.render('processed', {songname: JSON.stringify(genrerec.song_data['title']).replace(new RegExp('"', 'g'),''), songartist:JSON.stringify(genrerec.song_data['artists'][0]['name']).replace(new RegExp('"', 'g'),''), songgenre:JSON.stringify(genrerec.song_data['genres'][0]['name']).replace(new RegExp('"', 'g'),'')});
               clearInterval(bintId);
             }
             else if(genrerec.song_data == false){
