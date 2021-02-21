@@ -36,10 +36,8 @@ app.post('/upload-clip', async (req, res) => {
                 message: 'No file uploaded'
             });
         } else {
-            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
             let clip = req.files.clip;
             console.log(clip);
-            //Use the mv() method to place the file in upload directory (i.e. "uploads")
             clip.mv('./uploads/' + clip.name);
 			dolby.enhance_file('uploads/'+ clip.name);
 			let split = clip.name.split('.');
@@ -50,8 +48,12 @@ app.post('/upload-clip', async (req, res) => {
 				//send response
           let bintId = setInterval(()=>{
             console.log("grecRes:"+genrerec.song_data);
-            if(genrerec.song_data != null){
+            if(genrerec.song_data != null && genrerec.song_data != false){
               res.render('processed', {songname: 'f', songartist:'f', songgenre:JSON.stringify(genrerec.song_data['genres'][0]['name']).replace(new RegExp('"', 'g'),'')});
+              clearInterval(bintId);
+            }
+            else if(genrerec.song_data == false){
+              res.render('failure',{filename:clip.name});
               clearInterval(bintId);
             }
           }, 1000)

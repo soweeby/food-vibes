@@ -102,8 +102,15 @@ module.exports={
     identify(Buffer.from(bitmap), defaultOptions, function (err, httpResponse, body) {
       if (err) console.log(err);
       let json = JSON.parse(body);
-      console.log(JSON.stringify(json['metadata']['music'][0]['genres'][0]['name']));
-      module.exports.song_data = json['metadata']['music'][0];
+      console.log(JSON.stringify(json['status']['msg']));
+      if(JSON.stringify(json['status']['msg']).includes("No result")){
+        console.log("Failed to recognize music...");
+        module.exports.song_data = false;
+      }
+      else{
+        console.log(JSON.stringify(json['metadata']['music'][0]['genres'][0]['name']));
+        module.exports.song_data = json['metadata']['music'][0];
+      }
     });
   }
 }
