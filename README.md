@@ -4,7 +4,7 @@
 Because of COVID-19, hanging out with friends becomes increasingly difficult especially when internet fatigue kicks in. Because of this, sometimes we end up hanging out by doing homework and listening to music. After working on our very cool homework, we get hungry but we find it difficult to choose what to eat. We realized that sometimes our 'vibes'/moods change based on the music we are listening to. Therefore, we decided why not try making something that would give us food recommendations that would fit the 'vibes' of our hangouts.
 
 ## What it does
-> *food vibes* takes an audio file and gives you food recommendations based on the genre of your song.
+> *food vibes* takes an audio file and gives you food recommendations based on your 'vibes'/song.
 
 More descriptive:
 > *food vibes* takes an audio file and enhances it using the Media Processing API by [https://dolby.io/](dolby.io). 
