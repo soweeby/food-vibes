@@ -1,3 +1,5 @@
+*{text-transform: lowercase; }
+body{overflow:hidden;}
 
 @font-face{
 	font-family: joseItalics;
@@ -6,6 +8,9 @@
 @font-face{
 	font-family: joseLight;
 	src: url('JosefinSans-Light.ttf');
+}
+h2{
+	font-family: joseLight;
 }
 #clip{
 	margin-top:20px;
@@ -22,18 +27,39 @@ input {
 	text-align: center;
 	line-height: 22px;
 	position: relative;
-	font-family: 'joseItalics', Fallback, sans-serif;
 }
-.center-overkill{
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+@keyframes upDown {
+  to { transform: translatey(15%);}
+}
+@keyframes translate {
+  to { transform: translatex(100%);}
+}
+#logo-cont{
+	text-align:left;
+	position:relative;
+	transform:translate(-15%,-20%);
+	animation: translate 16s infinite linear;
+}
+#logo-cont > img{
+	animation: upDown 1.5s alternate infinite ease-in-out;
+}
+.wrapper {
+		-webkit-column-width: 150px; //You can't use 100%
+		column-width: 150px;
+		height: 100%;
+}
+.center-div.processed{
+	transform: translatey(20%);
+}
+.center-div > h1{
+	font-family: 'joseItalics', Fallback, sans-serif;
 }
 form{
 	display:inline-block;
 }
 #loading{
 	opacity:0;
+	pointer-events:none;
 }
 .body-wrapper{
 	background-color: rgb(0,0,248) !important;
