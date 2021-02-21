@@ -27,13 +27,16 @@
             stuffs = ["Twisted Tea 12pk", "Cheetos", "Twizzlers", "Lays Original"];
         }
         else if (song_genre === "dance" || song_genre === "pop") {
-
+            stuffs = ["Chex Mix", "Vitamin Water", "Garlic", "Water"];
         }
         else if (song_artist === "100 gecs") {
-            stuffs = ["windex"];
+            stuffs = ["windex", "glitter"];
         }
         else if (song_genre.includes("electro")) {
             stuffs = ["Monster Energy Drink", "Bang Energy", "Red Bull", "Rockstar Energy"]
+        }
+        else if (song_genre.includes("country") || song_genre.includes("folk")) {
+            stuffs = ["baked beans", "corn", "green beans", "steak"]
         }
         async function findFoods(foods) { //gets SKUs from list of foods
             for (let food of foods) {
