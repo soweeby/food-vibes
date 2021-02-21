@@ -24,6 +24,11 @@ input {
 	position: relative;
 	font-family: 'joseItalics', Fallback, sans-serif;
 }
+.center-overkill{
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 form{
 	display:inline-block;
 }
