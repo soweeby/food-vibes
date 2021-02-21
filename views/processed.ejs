@@ -9,39 +9,55 @@
     <script>
         const key = "b9144087445642548997f02c574886f9";
         var rit_store_number = 62;
-        var hip_hop = ["Sweet Baby Ray's Original", "Sprite", "Takis", "Mac&amp:Cheese"]
+        var stuffs = null;
+        var stuffz = [];
+        if ("<%= songgenre%>" === "Hip Hop" || "<% songgenre%>" === "Rap") {
+            stuffs = ["Sweet Baby Ray's Original", "Sprite 16.9oz", "Takis 9.9 oz", "Mac&ampCheese"];
+        }
+        else if ("<%= songgenre%>".includes("Rock")) {
+            stuffs = ["Bud Light Beer"];
+        }
+        else if ("<%= songgenre%>" === "Dance") {
 
+        }
+        else if ("<%= songgenre%>".includes("Electro")) {
+            stuffs = ["Monster Energy Drink", "Bang Energy", "Red Bull", "Rockstar Energy"]
+        }
         async function findFoods(foods) { //gets SKUs from list of foods
-            var stuffs = [];
             for (let food of foods) {
-                let skuu = await axios.get(`https://api.wegmans.io/products/search?query=${food}&api-version=2018-10-18&Subscription-Key=${key}`)
+                console.log(foods.length);
+                let skuu = await axios.get(`https://api.wegmans.io/products/search?query=${food}&api-version=2018-10-18&Subscription-Key=${key}`);
                 console.log(skuu.data.results[0]);
                 let stuff = parseInt(skuu.data.results[0].sku);
-                stuffs.push(stuff);
+                stuffz.push(stuff);
                 console.log(stuff);
             }
             console.log(stuffs);
-            for (let thing of stuffs) { //gets aisle location for each item
+            var i = 0;
+            for (let thing of stuffz) { //gets price for each item
                 console.log(thing)
-                let location = await findlocation(thing, 62);
+                let location = await findPrice(thing, 62);
                 console.log(location);
+                document.getElementById(`food${i + 1}`).innerHTML = stuffs[i] + " $" + parseFloat(location);
+                i += 1
             }
         }
-        async function findlocation(sku, store) { //gets aisle locations
+        async function findPrice(sku, store) { //gets prices
 
-            let location = await makeGetRequest(`https://api.wegmans.io/products/${sku}/locations/${store}?api-version=2018-10-18&subscription-key=${key}`)
+            let location = await makeGetRequest(`https://api.wegmans.io/products/${sku}/prices/${store}?api-version=2018-10-18&subscription-key=${key}`)
             var stringystring = location;
             console.log(stringystring);
-            document.getElementById("food").innerHTML = JSON.stringify(stringystring);
+
             return stringystring;
         }
 
         async function makeGetRequest(url) {
             let res = await axios.get(url);
-            let data = res.data.locations[0];
+            let data = res.data.price;
             return data;
         }
-        findFoods(hip_hop);
+
+        findFoods(stuffs);
 
     </script>
         <div class="center-div">
@@ -50,8 +66,11 @@
             <h2 id="song-name">name: <%= songname%></h2>
             <h2 id="song-artist">artist: <%= songartist%></h2>
             <h2 id="song-genre">genre: <%= songgenre%></h2>
-            <h1>press for your recommendations</h1>
-            <h1 id="food"></h1>
+            <h1>Foods that Fit the Vibe</h1>
+            <h2 id="food1"></h2>
+            <h2 id="food2"></h2>
+            <h2 id="food3"></h2>
+            <h2 id="food4"></h2>
         </div>
         <div class="center-div song-info">
 
