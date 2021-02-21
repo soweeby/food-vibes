@@ -1,9 +1,10 @@
 const fs = require('fs');
 const axios = require('axios').default;
 var $ = require("jquery");
+const _ = require("lodash");
 const APIKEY = 'aLoqEU72Rz9Th9tORbixy0iQRxIVJpAG';
-const file_path = 'C:/Users/Cumtown/Documents/BRUH/server/';
-const output_path = 'C:/Users/Cumtown/Documents/BRUH/server/';
+const file_path = __dirname + '/';
+const output_path = __dirname + '/';
 module.exports = {
 dl_res: null,
 enhance_file: function(file_name) {
