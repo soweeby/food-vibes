@@ -1,7 +1,8 @@
 # ![real logo](https://user-images.githubusercontent.com/38776241/108619441-e703d500-73f2-11eb-8d84-f254dff37e26.png) food-vibes
+have you ever been hungry but you don't know what to eat? let us pick for you! Let us listen to what you’re listening to and we'll make suggestions based on your 'vibes'
 
 ## Inspiration
-Because of COVID-19, hanging out with friends becomes increasingly difficult especially when internet fatigue kicks in. Because of this, sometimes we end up hanging out by doing homework and listening to music. After working on our very cool homework, we get hungry but we find it difficult to choose what to eat. We realized that sometimes our 'vibes'/moods change based on the music we are listening to. Therefore, we decided why not try making something that would give us food recommendations that would fit the 'vibes' of our hangouts.
+Because of COVID-19, hanging out with friends becomes increasingly difficult especially when internet fatigue kicks in. Sometimes we end up hanging out (socially distanced) by doing homework and listening to music together. After a long day of working on our very cool homework, we get hungry but we find it difficult to choose what to eat. That's when realized that sometimes our 'vibes'/moods change based on the music we are listening to. Therefore, we decided why not try making something that would give us food recommendations that would fit the 'vibes' of our hangouts.
 
 ## What it does
 > *food vibes* takes an audio file and gives you food recommendations based on your 'vibes'/song.
