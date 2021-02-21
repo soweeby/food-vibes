@@ -26,7 +26,7 @@ First, we broke down our project into a couple of goals:
 - Use the Wegmans API to get information about the food (ex. name, price, aisle) at their local Wegmans.
 
 Then, we figured out what we would be using:
-- Prototype making: [https://www.figma.com/] (figma.com) 
+- Prototype making: [https://www.figma.com/](figma.com) 
 - Audio Enhancement: Media Processing API by [https://dolby.io/](dolby.io)
 - Song and Genre Recognition: Media Recognition API by [https://www.acrcloud.com/](ACRCloud)
 - Food Products: Products API by [https://dev.wegmans.io/](Wegmans)
@@ -41,6 +41,7 @@ Finally, we broke it up into three parts that each of us took priority on:
 - How to bring all the individual APIs together
 - How to use all the APIs based on their documentation
 - Efficiently using time
+- Limits of APIs (Especially the song and genre recognizer)
 
 ## Accomplishments that we're proud of
 - Figuring how to integrate all the APIs
