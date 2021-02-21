@@ -15,8 +15,8 @@ The foods and genres are related using our personal opinions/experiences.
 
 ## How we built it
 We implemented this project using JavaScript, HTML/CSS, Axios, Express.js, Node.js, and APIs.
-Here's a link to our Figma Prototype! 
-https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain
+[https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain](Click here to see our Figma Prototype) 
+Extra Link in case that doesn't work: https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain
 
 First, we broke down our project into a couple of goals: 
 - Make a webpage that is able to take in an audio file.
@@ -58,6 +58,7 @@ Finally, we broke it up into three parts that each of us took priority on:
 - How the backend of a webpage can be made
 - more HTML/CSS (ex. radial gradients)
 - Async and Sync functions
+- How to make APIs interact
 
 ## What's next for food vibes 
 - Connecting the Location API for Wegmans so it can be used in other places
