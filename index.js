@@ -50,10 +50,14 @@ app.post('/upload-clip', async (req, res) => {
             if(genrerec.song_data != null && genrerec.song_data != false){
               console.log("grecRes:"+JSON.stringify(genrerec.song_data));
               res.render('processed', {songname: JSON.stringify(genrerec.song_data['title']).replace(new RegExp('"', 'g'),''), songartist:JSON.stringify(genrerec.song_data['artists'][0]['name']).replace(new RegExp('"', 'g'),''), songgenre:JSON.stringify(genrerec.song_data['genres'][0]['name']).replace(new RegExp('"', 'g'),'')});
+              genrerec.song_data = null;
+              dolby.dl_res = null;
               clearInterval(bintId);
             }
             else if(genrerec.song_data == false){
               res.render('failure',{filename:clip.name});
+              genrerec.song_data = null;
+              dolby.dl_res = null;
               clearInterval(bintId);
             }
           }, 1000)
