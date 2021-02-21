@@ -21,11 +21,14 @@
         if ("<%= songgenre%>" === "Hip Hop" || "<% songgenre%>" === "Rap") {
             stuffs = ["Sweet Baby Ray's Original", "Sprite 16.9oz", "Takis 9.9 oz", "Mac&ampCheese"];
         }
-        else if ("<%= songgenre%>".includes("Rock")) {
-            stuffs = ["Bud Light Beer"];
+        else if ("<%= songgenre%>".includes("Rock") || "<%= songgenre%>".includes("Metal")) {
+            stuffs = ["Twisted Tea 12pk", "Cheetos", "Twizzlers", "Lays Original"];
         }
-        else if ("<%= songgenre%>" === "Dance") {
+        else if ("<%= songgenre%>" === "Dance" || "<%= songgenre%>" === "Pop") {
 
+        }
+        else if ("<%= songartist%>" === "100 Gecs") {
+            stuffs = ["windex"];
         }
         else if ("<%= songgenre%>".includes("Electro")) {
             stuffs = ["Monster Energy Drink", "Bang Energy", "Red Bull", "Rockstar Energy"]
