@@ -1,7 +1,6 @@
 const fs = require('fs');
 const axios = require('axios').default;
 var $ = require("jquery");
-const _ = require("lodash");
 const APIKEY = 'aLoqEU72Rz9Th9tORbixy0iQRxIVJpAG';
 const file_path = __dirname + '/';
 const output_path = __dirname + '/';
@@ -87,8 +86,8 @@ enhance_file: function(file_name) {
               clearInterval(intId);
             })
             }).catch(function(error) {
-            console.log("error downloading, retrying in 2 seconds...");
-          });}, 2000)
+            console.log("error downloading, retrying...");
+          });}, 4000)
       }).catch(function(error) {
         console.log(error);
       })
