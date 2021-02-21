@@ -15,7 +15,7 @@ The foods and genres are related using our personal opinions/experiences.
 
 ## How we built it
 We implemented this project using JavaScript, HTML/CSS, Axios, Express.js, Node.js, and APIs.
-[https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain](Click here to see our Figma Prototype) !
+[https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain](Click) here to see our Figma Prototype !
 
 Extra Link in case that doesn't work: https://www.figma.com/proto/1IrVUulqONiEbKFRm81388/food-vibes?node-id=10%3A5&scaling=contain
 
