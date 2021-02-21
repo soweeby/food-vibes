@@ -13,25 +13,29 @@
 
     </head>
     <body>
+        <div id="logo-cont">
+          <img  src="/favicon/android-chrome-256x256.png"></img>
+        </div>
         <div class="center-div">
-            <img id="loading" src="/loading.gif"></img>
             <h1>hungry and indecisive?</h1>
-            <h1>let us pick :3</h1>
-            <h1>give us your vibe</h1>
+            <h1>let us pick :)</h1>
+            <h1>give us your vibe!</h1>
             <!--<img src="/hundgecz.gif" id="gecs">-->
+            <div class="input">
+              <form method="post" action="upload-clip" enctype="multipart/form-data">
+        				<input type="file"
+        				   id="clip" name="clip"
+        				   accept="audio/mp3, audio/wav">
+        				<input name="submit-button" type="submit" value="Submit">
+        			</form>
+              <script>
+              document.getElementsByName('submit-button')[0].addEventListener("click",()=>{
+                document.getElementById("loading").style.setProperty("opacity","1","important");
+              });
+              </script>
+            </div>
         </div>
-        <div class="input">
-          <form method="post" action="upload-clip" enctype="multipart/form-data">
-    				<input type="file"
-    				   id="clip" name="clip"
-    				   accept="audio/mp3, audio/wav">
-    				<input name="submit-button" type="submit" value="Submit">
-    			</form>
-          <script>
-          document.getElementsByName('submit-button')[0].addEventListener("click",()=>{
-            document.getElementById("loading").style.setProperty("opacity","1","important");
-          });
-          </script>
-        </div>
+
+        <img class="mx-auto d-block" id="loading" src="/loading.gif"></img>
     </body>
 </html>
