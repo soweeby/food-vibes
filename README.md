@@ -40,6 +40,9 @@ Finally, we broke it up into three parts that each of us took priority on:
 - Song and Genre Recognition + Webpage
 - Food Products + Identifying song to the genre
 
+## Example
+![Example GIF](https://github.com/maisha242/food-vibes/blob/main/misc/example.gif)
+
 ## Challenges we ran into
 - Finding a song and genre recognition API
 - How to bring all the individual APIs together
