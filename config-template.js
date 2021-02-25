@@ -1,6 +1,6 @@
 /*
 Place this in the parent directory (ie. the directory above index.js, dolby.js, and genrerect.js)
-
+Save as 'config.js'
 */
 module.exports = {
   DOLBY_API_KEY: '',
