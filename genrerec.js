@@ -3,7 +3,7 @@ var fs = require('fs');
 var crypto = require('crypto');
 //npm install request
 var request = require('request');
-
+var config = require('../config.js');
 // Replace "###...###" below with your project's host, access_key and access_secret.
 var defaultOptions = {
 host: 'identify-us-west-2.acrcloud.com',
@@ -11,8 +11,8 @@ host: 'identify-us-west-2.acrcloud.com',
   signature_version: '1',
   data_type:'audio',
   secure: true,
-  access_key: '7bec4c1705c10d244a6f4a667aa5503e',
-  access_secret: 'KK515fKXMgwvy2kBRa98XyPCaFaPysFAEEIwVDAZ'
+  access_key: config.ACR_CLOUD_ACCESS_KEY,
+  access_secret: config.ACR_CLOUD_SECRET_KEY
 };
 
 function buildStringToSign(method, uri, accessKey, dataType, signatureVersion, timestamp) {
