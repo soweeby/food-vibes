@@ -1,7 +1,6 @@
 const fs = require('fs');
 const axios = require('axios').default;
-var $ = require("jquery");
-const APIKEY = 'aLoqEU72Rz9Th9tORbixy0iQRxIVJpAG';
+const APIKEY = require('../config.js').DOLBY_API_KEY;
 const file_path = __dirname + '/';
 const output_path = __dirname + '/';
 module.exports = {

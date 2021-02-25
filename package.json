@@ -1,5 +1,5 @@
 {
-  "name": "food-vibes",
+  "name": "food-vibes-plus",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.19.0",
